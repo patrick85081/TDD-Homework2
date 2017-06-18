@@ -39,6 +39,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CalculateFactorys\CalculateFactory.cs" />
+    <Compile Include="Calculates\DefaultCalculate.cs" />
+    <Compile Include="Calculates\ICalculate.cs" />
+    <Compile Include="CalculateFactorys\ICalculateFactory.cs" />
     <Compile Include="IProductService.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="ProductSqlService.cs" />
