@@ -62,7 +62,7 @@ namespace PotterShoppingCart
         /// <returns>總金額</returns>
         public double CalculatePrice()
         {
-            return _calculate.Calculate(_products);
+            return _calculate.Calculate(new Dictionary<Product,int>( _products));
         }
     }
 }
