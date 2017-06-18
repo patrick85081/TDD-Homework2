@@ -31,11 +31,11 @@ In order to 提供最便宜的價格給來買書的爸爸媽媽. As a 佛心的�
 - When 結帳
 - Then 價格應為 190 元
 
-#### 個人思路
+### 個人思路
 此題目總共有五個測試需求，但是不是一次寫完，而是寫完一個Commit一次，用意應該是模擬現實狀況，需求是隨著時間出現，一開始的需求往往不是最後的結果。  
 
 ### 購物車API 設計思路  
-一個商場可能會同時包含多種的價格計算方式(優惠價格)，所以我認為我應該將價格計算方式抽象出來定義一個```interface```，購物車內使用```IDictionary```來記錄購買商品以及數量。
+一個商場可能會同時包含多種的價格計算方式(優惠價格)，所以我認為應該將價格計算方式抽象出來定義一個```interface```，購物車內使用```IDictionary```來記錄購買商品以及數量。
 ```c#
 IDictionary<Product, int> product;
 ```
@@ -54,3 +54,4 @@ public interface ICalculate
     double Calculate(IDictionary<Product, int> products);  
 }  
 ```
+因為未來可能有多種優惠價格的計算方式會並存，所以這裡我選擇用```裝飾者模式```來設計，將多個```ICalculate```疊加計算。

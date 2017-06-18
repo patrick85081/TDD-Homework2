@@ -6,7 +6,8 @@ namespace PotterShoppingCart.CalculateFactorys
     {
         public ICalculate CreateCalculate()
         {
-            return new DefaultCalculate();
+            return BaseCalculate.ComposeBaseCalculate(
+                new PotterDiscounted(2, 0.95));
         }
     }
 }
