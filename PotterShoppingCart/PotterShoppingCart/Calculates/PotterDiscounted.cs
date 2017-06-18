@@ -67,7 +67,7 @@ namespace PotterShoppingCart.Calculates
                 {
                     if (products.ContainsKey(potter.Key))
                     {
-                        products[potter.Key] -= _count;
+                        products[potter.Key] -= groupNum;
                         if (products[potter.Key] <= 0)
                         {
                             products.Remove(potter.Key);
