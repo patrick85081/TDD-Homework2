@@ -133,6 +133,24 @@ namespace PotterShoppingCart.Tests
             //assert
             Assert.AreEqual(460, price);
         }
+
+        [TestMethod]
+        public void CalculatePrice_第一集五本_第二集四本_第三集三本_第四集二本_第五集一本_總金額_1255()
+        {
+            //arrange
+            var shoppingCart = new ShoppingCart(_productService);
+            shoppingCart.AddProduct("1", 5);
+            shoppingCart.AddProduct("2", 4);
+            shoppingCart.AddProduct("3", 3);
+            shoppingCart.AddProduct("4", 2);
+            shoppingCart.AddProduct("5", 1);
+
+            //act
+            var price = shoppingCart.CalculatePrice();
+
+            //assert
+            Assert.AreEqual(1255, price);
+        }
     }
 
     internal class StubProductService : IProductService
